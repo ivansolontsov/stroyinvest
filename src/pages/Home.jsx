@@ -5,6 +5,8 @@ import Hero from '../components/Hero'
 import HowToOrder from '../components/HowToOrder'
 import WeMake from '../components/WeMake'
 import Whyus from '../components/Whyus'
+import Map from '../components/Map'
+import { ContactUs } from '../components/ContactUs'
 
 const Home = () => {  
  
@@ -16,6 +18,8 @@ const Home = () => {
       <Whyus/>
       <WeMake/>
       <HowToOrder/>
+      <ContactUs />
+      <Map />
     </section>
   )
 }
