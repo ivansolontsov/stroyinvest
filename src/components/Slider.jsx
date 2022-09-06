@@ -24,12 +24,12 @@ const Slider = ({slides, space, sliderStyle, sliderId, sliderType, setWidth}) =>
           }}
         className={sliderStyle}>
         { 
-            slides.map(slides => {       
+            slides.map((slides, index) => {       
                 return(
                     (() => {
                         if (sliderType === 'delivery') {
                             return (
-                                <SwiperSlide className="delivery__slider-slide">
+                                <SwiperSlide className="delivery__slider-slide" key={index}>
                                     <div className="delivery__slide-header">
                                         <img src ={slides.avatar} alt={slides.title} className="delivery__slide-avatar" />
                                         <h3 className="delivery__slide-title">{slides.title}</h3>
@@ -41,7 +41,7 @@ const Slider = ({slides, space, sliderStyle, sliderId, sliderType, setWidth}) =>
                                 )
                         } else if(sliderType === "gallery") {
                             return (
-                                <SwiperSlide className='gallery__slide' style={{ backgroundImage: 'url(' + slides.image + ')', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
+                                <SwiperSlide key={index} className='gallery__slide' style={{ backgroundImage: 'url(' + slides.image + ')', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
                                     <div className='gallery__slide-bg'></div>
                                     <h3 className="gallery__slide-title">{slides.title}</h3>
                                 </SwiperSlide>

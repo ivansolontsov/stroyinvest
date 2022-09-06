@@ -14,28 +14,30 @@ const Hero = () => {
   ]
 
   return (
-    <div className='hero content'>
-    <div className="hero__socials">
-    <ul className="hero__socials-list">
-        {     
-        heroSocials.map(element => {       
-            return(
-            <li className="hero__socials-item">
-            <img src={element.icon} alt={element.title}/>
-            {element.title}
-            </li>
-            )               
-        })
-        }
-    </ul>
-    </div>
-    <h1 className='hero__title'>Ножи Измельчители</h1>
-    <p className="hero__subtitle">
-    Мы занимаемся производством запчастей для <strong>сельскохозяйственной техники</strong>, <strong>лазерной резкой</strong> по вашим эскизам. Оставьте заявку для уточнения любой 
-    интересующей вас информации 
-    касающийся наших услуг.
-    </p>
-    <a href="/#" className="hero__button"><span>📞</span> Оставить заявку</a>
+    <div className='content'>
+      <div className="hero__wrapper">
+        <div className="hero__socials">
+          <ul className="hero__socials-list">
+            {     
+            heroSocials.map((element, index) => {       
+                return(
+                <li key={index} className="hero__socials-item">
+                <img src={element.icon} alt={element.title}/>
+                {element.title}
+                </li>
+                )               
+            })
+            }
+          </ul>
+        </div>
+        <h1 className='hero__title'>Ножи Измельчители</h1>
+        <p className="hero__subtitle">
+        Мы занимаемся производством запчастей для <strong>сельскохозяйственной техники</strong>, <strong>лазерной резкой</strong> по вашим эскизам. Оставьте заявку для уточнения любой 
+        интересующей вас информации 
+        касающийся наших услуг.
+        </p>
+        <a href="/#" className="hero__button"><span>📞</span> Оставить заявку</a>
+      </div>
     </div>
   )
 }
