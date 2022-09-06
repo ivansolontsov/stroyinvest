@@ -34,7 +34,7 @@ const Gallery = () => {
       ]
       
   return (
-    <div className="gallery">
+    <div className="gallery content">
     <h2 className='gallery__title'>
       Наши Изделия
     </h2>

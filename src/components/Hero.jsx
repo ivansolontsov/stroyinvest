@@ -14,7 +14,7 @@ const Hero = () => {
   ]
 
   return (
-    <div className='hero'>
+    <div className='hero content'>
     <div className="hero__socials">
     <ul className="hero__socials-list">
         {     

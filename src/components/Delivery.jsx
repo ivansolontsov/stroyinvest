@@ -26,7 +26,7 @@ const Delivery = () => {
       ]
       
   return (
-    <div className="delivery">
+    <div className="delivery content">
     <div className="delivery__bg">
       <div className="delivery__bg-box"></div>
     </div>

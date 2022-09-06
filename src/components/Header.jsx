@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header content">
       <div className="header__left-side">
         <div className="header__logo">
           СТРОЙИНВЕСТ-С

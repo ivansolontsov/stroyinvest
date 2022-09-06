@@ -2,10 +2,12 @@ import React from 'react'
 
 const Layout = ({children}) => {
   return (
-    <div className="content">
-      <div className="content__bg">
-        <div className="content__bg-overlay"></div>
-        <div className="content__bg-image"></div>
+    <div>
+      <div className="bg">
+        <div className="bg__wrapper">
+          <div className="bg__overlay"></div>
+          <div className="bg__image"></div>
+        </div>
       </div>
       {children}
     </div>
