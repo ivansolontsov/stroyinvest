@@ -34,7 +34,7 @@ const Footer = () => {
   let menu = [
     {title: "Каталог", link: "/"},
     {title: "Оборудование", link: "/"},
-    {title: "О Нас", link: "/"},
+    {title: "О нас", link: "/"},
     {title: "Оставить заявку", link: "/"},
   ]
 
@@ -58,8 +58,8 @@ const Footer = () => {
               </div>
               <div className="footer__logo-adress">
                 {
-                  companyContacts.map((item) => (
-                    <div>
+                  companyContacts.map((item, index) => (
+                    <div key={index}>
                       <h3>{item.title}</h3>
                       <a href={item.href} target="_blank" rel="noreferrer">{item.text}</a>
                     </div>

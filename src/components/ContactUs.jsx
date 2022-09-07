@@ -1,38 +1,45 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Parser from 'html-react-parser';
+import successIcon from '../assets/images/icons/success.svg'
 
 export const ContactUs = () => {
   const form = useRef();
-  const [formState, setFormState] = React.useState(false);
+  const [formStatus, setFormStatus] = React.useState(false);
   const [blockError, setBlockError] = React.useState(false);
   const [title, setTitle] = React.useState('Связаться с нами');
-  const [subtitle, setSubTitle] = React.useState("Оставьте ваше имя и  любую контактную информацию <strong>(телефон, e-mail)</strong>, мы свяжемся с вами в наши рабочие часы для уточнения всей информации.");
+  const [subtitle, setSubTitle] = React.useState("Оставьте Ваше имя и <strong>номер телефона</strong>. Мы свяжемся с Вами в рабочие часы <strong>(Пн-Пт 8:00 - 18:00, Сб, Вс - Выходные)</strong> для уточнения деталей заказа.");
   const [buttonText, setButtonText] = React.useState("Отправить");
   const [buttonState, setButtonState] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_alpxpdn 123', 'template_jnx110m 123', form.current, 'lokp0UZx98PJrVUzE 123')
-      .then((result) => {
-        setFormState(true);
-        setTitle('Заявка Отправлена!')
-        setSubTitle('Скоро мы с вами свяжемся, спасибо большое за заявку!')
-        setButtonText('Успешно')
-        setButtonState(false)
-      }, (error) => {
-        setBlockError(true);
-        setTitle('Ошибка!')
-        setSubTitle(`Текст Ошибки: ${error.text}`)
-        setButtonText('Отправить Заново')
-        setButtonState(true)
-        console.log(error);
-      });
+    setLoading(true)
+    setTimeout(() => {
+            emailjs.sendForm('service_alpxpdn', 'template_jnx110m', form.current, 'lokp0UZx98PJrVUzE')
+            .then((result) => {
+                setLoading(false)
+                setFormStatus(true);
+                setTitle('Заявка Отправлена!')
+                setSubTitle('Скоро мы с вами свяжемся, спасибо большое за заявку!')
+                setButtonText('')
+                setButtonState(false)
+            }, (error) => {
+                setLoading(false)
+                setBlockError(true);
+                setTitle('Ошибка!')
+                setSubTitle(`Текст Ошибки: ${error.text}`)
+                setButtonText('Отправить Заново')
+                setButtonState(true)
+                console.log(error);
+            });
+    }, 2000);
   };
 
   return (
     <div className="request content">
-        <div className={`request__wrapper ${formState ? 'success' : ''} ${blockError ? 'error' : ''}`}>
+        <div className={`request__wrapper ${formStatus ? 'success' : ''} ${blockError ? 'error' : ''}`}>
             <h2 className="request__title">
                 {title}
             </h2>
@@ -40,8 +47,12 @@ export const ContactUs = () => {
                 {Parser(subtitle)}
             </p>
             <form ref={form} onSubmit={sendEmail} className="request__form">
-                <input type="text" name="user_name" id="formInfo" placeholder="Введите Ваше имя и номер телефона" className="request__input" required min="3" max="32"/>
-                <input type="submit" value={buttonText} className={`request__submit-button ${buttonState ? '' : 'disabled'}`} />
+                <input type="text" name="user_name" id="userName" placeholder="Введите Ваше имя" className="request__input" required min="1" max="32"/>
+                <input type="tel" name="phone_number" id="userPhone" placeholder="Номер телефона" className="request__input" required min="3" max="32"/>
+                <button className={`request__submit-button ${buttonState ? '' : 'disabled'}`}>
+                    {loading ? <div className="lds-ripple"><div></div><div></div></div> : `${buttonText}`}
+                    {formStatus ? <img src={successIcon} alt={buttonText} /> : ``}
+                </button>
             </form>
         </div>
     </div>
