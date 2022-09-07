@@ -9,7 +9,7 @@ function App() {
     <Layout>
       <Header/>
       <Home/>
-      <Footer/>
+      {/* <Footer/> */}
     </Layout>
   );
 }

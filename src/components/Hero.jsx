@@ -16,6 +16,7 @@ const Hero = () => {
   return (
     <div className='content'>
       <div className="hero__wrapper">
+        <div className="bg__image"></div>
         <div className="hero__socials">
           <ul className="hero__socials-list">
             {     

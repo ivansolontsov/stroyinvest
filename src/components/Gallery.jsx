@@ -1,7 +1,18 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 import Slider from './Slider';
+import useWindowDimensions from './WindowSize';
 
 const Gallery = () => {
+
+    const { width } = useWindowDimensions();
+
+    let space = 30;
+
+    if (width <= "438") {
+      space = 15;
+    }
+
     let gallery = [
         {
           title: 'Будка для собаки', 
@@ -38,7 +49,7 @@ const Gallery = () => {
     <h2 className='gallery__title'>
       Наши Изделия
     </h2>
-    <Slider slides={gallery} space={30} sliderStyle={'gallery__slider'} sliderId={'gallery'} sliderType={'gallery'} setWidth={'100%'} />
+    <Slider slides={gallery} space={space} sliderStyle={'gallery__slider'} sliderId={'gallery'} sliderType={'gallery'} setWidth={'100%'} />
   </div>
   )
 }

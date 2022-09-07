@@ -1,7 +1,17 @@
 import React from 'react'
 import Slider from './Slider';
+import useWindowDimensions from './WindowSize';
 
 const Delivery = () => {
+
+    const { width } = useWindowDimensions();
+
+    let space = 30;
+
+    if (width <= "438") {
+      space = 15;
+    }
+
     let reviews = [
         {
           title: 'Ольга Кузнецова', 
@@ -37,7 +47,7 @@ const Delivery = () => {
       Мы можем отправить наше изделие в любую точку России. Работаем с транспортными компаниями ПЭК, СДЭК.
       Стоимость доставки рассчитывается индивидуально для каждого заказа, также возможна доставка по городу или самовывоз с ул.Азина 81, город Саратов.
     </p>
-    <Slider slides={reviews} space={27} sliderStyle={'delivery__slider'} sliderId={'delivery'} sliderType={'delivery'} />
+    <Slider slides={reviews} space={space} sliderStyle={'delivery__slider'} sliderId={'delivery'} sliderType={'delivery'} />
   </div>
   )
 }
