@@ -2,6 +2,7 @@ import React from 'react'
 import instagramIcon from '../assets/images/icons/instagram.svg'
 import whatsappIcon from '../assets/images/icons/whatsapp.svg'
 import telegramIcon from '../assets/images/icons/telegram.svg'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
 
@@ -32,10 +33,10 @@ const Footer = () => {
 
 
   let menu = [
-    {title: "Каталог", link: "/"},
-    {title: "Оборудование", link: "/"},
-    {title: "О нас", link: "/"},
-    {title: "Оставить заявку", link: "/"},
+    {title: "Главная", link: "/"},
+    {title: "Каталог", link: "/catalog"},
+    {title: "Контакты", link: "/contacts"},
+    {title: "О нас", link: "/aboutus"},
   ]
 
 
@@ -43,7 +44,7 @@ const Footer = () => {
     <footer className='footer wide-content'>
       <div className="content">
         <div className="footer__wrapper">
-            <div className="footer__block">
+            <div className="footer__block footer-logo">
               <div className="footer__block-logo-wrapper">
                 <h2 className="footer__logo">ООО «СТРОЙИНВЕСТ-С»</h2>
                 <ul className="footer__logo-sub-list">
@@ -67,17 +68,17 @@ const Footer = () => {
                 }
               </div>
             </div>
-            <div className="footer__block">
+            <div className="footer__block footer-hours">
               <div className="footer__block-title">ЧАСЫ РАБОТЫ</div>
               <div className="footer__block-working-hours">
               {
                 workingHours.map((item, index) => (
-                  <p>{item.text}</p>
+                  <p key={index}>{item.text}</p>
                 ))
               }
               </div>
             </div>
-            <div className="footer__block">
+            <div className="footer__block footer-contacts">
               <div className="footer__block-title">СВЯЗАТЬСЯ С НАМИ</div>
               <ul className="footer__block-contacts">
               {
@@ -92,13 +93,13 @@ const Footer = () => {
               }
               </ul>
             </div>
-            <div className="footer__block">
+            <div className="footer__block footer-navigation">
               <div className="footer__block-title">НАВИГАЦИЯ</div>
               <ul className="footer__block-menu">
               {
                 menu.map((item, index) => (
                     <li key={index}>
-                      <a href={item.link}>{item.title}</a>
+                      <Link to={item.link}>{item.title}</Link>
                     </li>
                 ))
               }

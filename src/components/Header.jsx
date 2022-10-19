@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
+
 
 const Header = () => {
   return (
@@ -6,7 +8,7 @@ const Header = () => {
       <div className="header__content-wrapper">
         <div className="header__left-side">
           <div className="header__logo">
-            СТРОЙИНВЕСТ-С
+            <NavLink to="/">СТРОЙИНВЕСТ-С</NavLink>
           </div> 
           <div className="header__logo-info-box">
             ул. Азина, 81, Саратов  
@@ -16,11 +18,10 @@ const Header = () => {
           </div>
         </div>
         <nav className="header__nav">
-          <div className="header__nav-item">Главная</div>
-          <div className="header__nav-item">Каталог</div>
-          <div className="header__nav-item">О нас</div>
-          <div className="header__nav-item">Производство</div>
-          <div className="header__nav-item">Контакты</div>
+          <NavLink to="/" className="header__nav-item">Главная</NavLink>
+          <NavLink to="/catalog" className="header__nav-item">Каталог</NavLink>
+          <NavLink to="/contacts" className="header__nav-item">Контакты</NavLink>
+          <NavLink to="/aboutus" className="header__nav-item">О нас</NavLink>
         </nav>
       </div>
     </header>

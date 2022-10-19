@@ -9,7 +9,7 @@ export const ContactUs = () => {
   const [blockError, setBlockError] = React.useState(false);
   const [title, setTitle] = React.useState('Связаться с нами');
   const [subtitle, setSubTitle] = React.useState("Оставьте Ваше имя и <strong>номер телефона</strong>. Мы свяжемся с Вами в рабочие часы <strong>(Пн-Пт 8:00 - 18:00, Сб, Вс - Выходные)</strong> для уточнения деталей заказа.");
-  const [buttonText, setButtonText] = React.useState("Отправить");
+  const [buttonText, setButtonText] = React.useState("Отправить");  
   const [buttonState, setButtonState] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
 
@@ -34,7 +34,7 @@ export const ContactUs = () => {
                 setButtonState(true)
                 console.log(error);
             });
-    }, 2000);
+    }, 500);
   };
 
   return (
