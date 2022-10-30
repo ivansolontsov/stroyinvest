@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import Parser from 'html-react-parser';
 import successIcon from '../assets/images/icons/success.svg'
 
-export const ContactUs = () => {
+export const ContactUs = ({isModal, children, someInfo}) => {
   const form = useRef();
   const [formStatus, setFormStatus] = React.useState(false);
   const [blockError, setBlockError] = React.useState(false);
@@ -39,7 +39,10 @@ export const ContactUs = () => {
 
   return (
     <div className="request content">
-        <div className={`request__wrapper ${formStatus ? 'success' : ''} ${blockError ? 'error' : ''}`}>
+        <div className={`request__wrapper ${formStatus ? 'success' : ''} ${blockError ? 'error' : ''} ${isModal ? 'request__wrapper-border' : ''}`}>
+            {isModal 
+            ? children
+            : ''}
             <h2 className="request__title">
                 {title}
             </h2>
@@ -49,6 +52,7 @@ export const ContactUs = () => {
             <form ref={form} onSubmit={sendEmail} className="request__form">
                 <input type="text" name="user_name" id="userName" placeholder="Введите Ваше имя" className="request__input" required min="1" max="32"/>
                 <input type="tel" name="phone_number" id="userPhone" placeholder="Номер телефона" className="request__input" required min="3" max="32"/>
+                <input type="hidden" name="user_text" id="userText" value={someInfo}/>
                 <button className={`request__submit-button ${buttonState ? '' : 'disabled'}`}>
                     {loading ? <div className="lds-ripple"><div></div><div></div></div> : `${buttonText}`}
                     {formStatus ? <img src={successIcon} alt={buttonText} /> : ``}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { ContactUs } from './ContactUs'
 import laserIcon from '../assets/images/icons/showcase/laser.png'
 import tokarIcon from '../assets/images/icons/showcase/tokarnie.png'
 import stolarIcon from '../assets/images/icons/showcase/wood.png'
@@ -9,8 +10,12 @@ import frezIcon from '../assets/images/icons/showcase/gear.png'
 import nozhiIcon from '../assets/images/icons/showcase/protivo.png'
 import traktorIcon from '../assets/images/icons/showcase/selhoz.png'
 import pressIcon from  '../assets/images/icons/showcase/press.png'
+import crossIcon from '../assets/images/icons/cross.svg'
 
 const WeMake = () => {
+
+    const [openModal, setOpenModal] = React.useState(false);
+    const [info, setInfo] = React.useState('');
 
     let showcaseItems = [
         {icon: laserIcon, title: 'Лазерная Резка Металла', text: 'Режем металл от 0,5мм до 16мм'},
@@ -27,6 +32,11 @@ const WeMake = () => {
 
   return (
     <div className="wemake content">
+        <div className={`site__modal ${openModal ? 'show' : ''}`}>
+            <ContactUs isModal={true} someInfo={info}>
+            <div className="request__cross"><button onClick={() => setOpenModal(false)} className="request__cross-button"><img src={crossIcon} alt="Закрыть Окно" /></button></div>
+            </ContactUs>
+        </div>
         <div className="wemake__wrapper">
             <h2 className='wemake__title'>
                 Услуги
@@ -42,7 +52,11 @@ const WeMake = () => {
                                 <h3>{item.title}</h3>
                                 <p>{item.text}</p>
                                 <div className="wemake__button-wrapper">
-                                    <button className='wemake__button'>Заказать</button>
+                                    <button onClick={() => {
+                                        setOpenModal(true)
+                                        setInfo(`${item.title} + ${item.text}`)
+                                        }
+                                    } className='wemake__button'>Заказать</button>
                                 </div>
                             </li>
                         )

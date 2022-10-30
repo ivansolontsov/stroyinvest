@@ -6,7 +6,7 @@ import Calendar from '../assets/images/icons/calendar.svg'
 import DeliveryIcon from '../assets/images/icons/delivery.svg'
 
 const Whyus = () => {
-    let avitoLink = "#";
+    let avitoLink = "";
     let features = [
       {icon: PercentageIcon,  title: 'Низкие цены', text: 'Самые доступные цены на рынке для наших заказчиков. Звоните и убедитесь в этом сами.'},
       {icon: Calendar,  title: 'Скорость', text: 'Ваши заказы изготавливаются и доставляются в кратчайшие сроки!'},
