@@ -15,13 +15,13 @@ import DocumentMeta from 'react-document-meta'
 const Home = () => {  
 
   const meta = {
-    title: 'Главная | ООО "СТРОЙИНВЕСТ-С"',
-    description: 'I am a description, and I can create multiple tags',
+    title: 'Купить Ножи Противорежущие с доставкой! от ООО "СТРОЙИНВЕСТ-С"',
+    description: 'Мы изготавливаем противорежущие ножи и другие запчасти для сельскохозяйственной техники и комбайнов LEXION, NEW HOLLAND, CLASS, MEGA, VEKTOR, NEW HOLLAND, АКРОС, ТОРУМ, ТУКАНО.',
     canonical: 'http://example.com/path/to/page',
     meta: {
       charset: 'utf-8',
       name: {
-        keywords: 'стройинвест, позвонить, контакты, номер, адрес'
+        keywords: 'ножи противорежущие, запчасти для сельскохозяйственной техники, ножи для комбайнов, противорез, ножи для зерноуборочных комбайнов, купить, нож противорежущий измельчителя'
       }
     }
   }

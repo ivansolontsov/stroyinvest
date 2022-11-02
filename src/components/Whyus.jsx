@@ -6,7 +6,7 @@ import Calendar from '../assets/images/icons/calendar.svg'
 import DeliveryIcon from '../assets/images/icons/delivery.svg'
 
 const Whyus = () => {
-    let avitoLink = "";
+    let avitoLink = "https://www.avito.ru/user/48a202822aaf4cbddc3dfa5051cc5f37/profile?src=sharing";
     let features = [
       {icon: PercentageIcon,  title: 'Низкие цены', text: 'Самые доступные цены на рынке для наших заказчиков. Звоните и убедитесь в этом сами.'},
       {icon: Calendar,  title: 'Скорость', text: 'Ваши заказы изготавливаются и доставляются в кратчайшие сроки!'},
@@ -48,7 +48,7 @@ const Whyus = () => {
         <div className="whyus__avito-blur"></div>
         <span className="whyus__avito-title">Мы есть на</span>
         <img src={AvitoIcon} alt="Avito Logo" />
-        <a href={avitoLink} traget="_blank" className='whyus__avito-button'>Объявления</a>
+        <a href={avitoLink} target="_blank" rel="noreferrer" className='whyus__avito-button'>Объявления</a>
       </div>
     </div>
   )

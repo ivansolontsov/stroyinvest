@@ -14,24 +14,39 @@ const Delivery = () => {
 
     let reviews = [
         {
-          title: 'Ольга Кузнецова', 
-          avatar: 'https://sun7-14.userapi.com/s/v1/ig2/Uhwb-GISd6M5Q62WIOgZnjGn151MdxdmCSkfSOTwHES4yoSQF1Cpwo0YkOO02DbQoiryFr3SAec4zaoasPpP4YTt.jpg?size=100x100&quality=95&crop=168,2,850,850&ava=1', 
-          text: 'Все дошло в целости и сохранности, спасибо большое за вашу работу!'
+          title: 'Сергей', 
+          avatar: 'https://static.avito.ru/stub_avatars/%D0%A1/4_256x256.png', 
+          text: 'Будка хорошая'
         },
         {
-          title: 'Ольга Кузнецова', 
-          avatar: 'https://sun7-14.userapi.com/s/v1/ig2/Uhwb-GISd6M5Q62WIOgZnjGn151MdxdmCSkfSOTwHES4yoSQF1Cpwo0YkOO02DbQoiryFr3SAec4zaoasPpP4YTt.jpg?size=100x100&quality=95&crop=168,2,850,850&ava=1', 
-          text: 'Все дошло в целости и сохранности, спасибо большое за вашу работу!'
+          title: 'Дмитрий', 
+          avatar: 'https://static.avito.ru/stub_avatars/%D0%94/13_256x256.png', 
+          text: 'Человек оперативно ответил и помог.'
         },
         {
-          title: 'Ольга Кузнецова', 
-          avatar: 'https://sun7-14.userapi.com/s/v1/ig2/Uhwb-GISd6M5Q62WIOgZnjGn151MdxdmCSkfSOTwHES4yoSQF1Cpwo0YkOO02DbQoiryFr3SAec4zaoasPpP4YTt.jpg?size=100x100&quality=95&crop=168,2,850,850&ava=1', 
-          text: 'Все дошло в целости и сохранности, спасибо большое за вашу работу!'
+          title: 'MyBestCar', 
+          avatar: 'https://static.avito.ru/stub_avatars/M/9_256x256.png', 
+          text: 'Все как хотел- быстро и точно'
         },
         {
-          title: 'Ольга Кузнецова', 
-          avatar: 'https://75.img.avito.st/avatar/social/256x256/12716835675.jpg', 
-          text: 'Все дошло в целости и сохранности, спасибо большое за вашу работу!'
+          title: 'Вячеслав', 
+          avatar: 'https://static.avito.ru/stub_avatars/%D0%92/13_256x256.png', 
+          text: 'Все быстро и аккуратно, рекомендую 👍'
+        },
+        {
+          title: 'Дмитрий', 
+          avatar: 'https://29.img.avito.st/image/1/1.qFxn6La2ErVRT4azO6q1FYhLBL_ZywI31UsG.O0gB-da_mh5ClhSsgZGPfGW0qh0uy4QaxA2wDZNoDqw', 
+          text: 'Быстро, качественно, в срок. Спасибо.'
+        },
+        {
+          title: 'Вячеслав Слепов', 
+          avatar: 'https://48.img.avito.st/image/1/1.UbSwH7a2612GuH9bnjJzxxu8_VcOPPvfArz_.gIoxxxmQWCl09FvE0KsHZNlIOJWUntXgM1hVurpGYwk', 
+          text: '👍. Гидратаран удивил, установил и без электричества и бензина качает воду, сейчас это актуально и иметь преимущество работать автономная без участвия человека.'
+        },
+        {
+          title: 'Сергей Чарук', 
+          avatar: 'https://50.img.avito.st/image/1/1.M5ru9ba2iXPYUh11hIlIlRxWn3lQ1pnxXFad.sg4jCCMNTiflnekBZ9_fEa4-t8wi-4qYoaKJ8S7J9wY', 
+          text: 'Обратился к ним с просьбой сварить офисное кресло, сделали все аккуратно в тот же день, рекоммендую'
         },
       ]
       

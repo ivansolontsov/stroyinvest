@@ -11,10 +11,10 @@ const Hero = () => {
   const [openModal, setOpenModal] = React.useState(false);
    
   let heroSocials = [
-    {title: 'Avito', icon: avitoIcon, link: '/'},
+    {title: 'Avito', icon: avitoIcon, link: 'https://www.avito.ru/user/48a202822aaf4cbddc3dfa5051cc5f37/profile?src=sharing'},
     {title: 'Instagram', icon: instagramIcon, link: 'https://www.instagram.com/stroiinvest_c_64/'},
     {title: 'WhatsApp', icon: whatsappIcon, link: 'https://api.whatsapp.com/send?phone=79272238440'},
-    {title: 'Telegram', icon: telegramIcon, link: 'https://t.me/stroyinvest'},
+    {title: 'Telegram', icon: telegramIcon, link: 'https://t.me/stroyinvests77'},
   ]
 
   return (
@@ -42,7 +42,7 @@ const Hero = () => {
             }
           </ul>
         </div>
-        <h1 className='hero__title'>Ножи Измельчители</h1>
+        <h1 className='hero__title'>Ножи Противорежущие</h1>
         <p className="hero__subtitle">
           Мы занимаемся производством запчастей для <strong>сельскохозяйственной техники</strong>, <strong>лазерной резкой</strong> по Вашим эскизам. Оставьте заявку для уточнения 
           интересующей информации.

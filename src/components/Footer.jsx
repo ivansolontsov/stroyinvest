@@ -24,11 +24,11 @@ const Footer = () => {
   ]
 
   let contacts = [
-    {icon: telegramIcon, text: "Написать в Telegram", link: "https://t.me/stroyinvest"},
+    {icon: telegramIcon, text: "Написать в Telegram", link: "https://t.me/stroyinvests77"},
     {icon: whatsappIcon, text: "Написать в WhatsApp", link: "https://api.whatsapp.com/send?phone=79272238440"},
-    {icon: telegramIcon, text: "Написать в Viber", link: "viber://chat?number=%2B79272238440"},
+    {icon: "", text: "Написать в Viber", link: "viber://chat?number=%2B79272238440"},
     {icon: instagramIcon, text: "Написать в Instagram", link: "https://www.instagram.com/stroiinvest_c_64/"},
-    {icon: telegramIcon, text: "Написать на Почту", link: "mailto:stroinvest-s@yandex.ru"},
+    {icon: "", text: "Написать на Почту", link: "mailto:stroinvest-s@yandex.ru"},
   ]
 
 
@@ -85,7 +85,9 @@ const Footer = () => {
                 contacts.map((item, index) => (
                     <li key={index}>
                       <a href={item.link}>
-                        <img src={item.icon} alt={item.text}/>
+                        {item.icon
+                        ? <img src={item.icon} alt={item.text}/>
+                        : ''}
                         {item.text}
                       </a>
                     </li>

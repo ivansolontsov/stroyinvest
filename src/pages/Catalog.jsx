@@ -18,39 +18,39 @@ const Catalog = () => {
   ]
   let catalog = [
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
+      id: 1, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
     },
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 100, category: 0,
+      id: 2, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 100, category: 0,
     },
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
+      id: 3, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
     },
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
+      id: 4, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
     },
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
+      id: 5, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
     },
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
+      id: 6, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
     },
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
+      id: 7, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
     },
     {
-      id: 0, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
+      id: 8, image: nozhik, title: 'Нож противорежущий', l: '199', b: '199', s: '199', d: '199', price: 299, category: 0,
     },
   ]
 
   const meta = {
-    title: 'Каталог | ООО "СТРОЙИНВЕСТ-С"',
-    description: 'I am a description, and I can create multiple tags',
+    title: 'Каталог Противорежущий Ножей для Комбайнов | ООО "СТРОЙИНВЕСТ-С"',
+    description: 'В нашем каталоге представлено 14 видов противорезов для комбайнов LEXION, NEW HOLLAND, CLASS, MEGA, VEKTOR, NEW HOLLAND, АКРОС, ТОРУМ, ТУКАНО.',
     canonical: 'http://example.com/path/to/page',
     meta: {
       charset: 'utf-8',
       name: {
-        keywords: 'стройинвест, позвонить, контакты, номер, адрес'
+        keywords: 'ножи противорежущие, ножи противорезы, ножи для комбайнов, ножи для сельхоз техники, LEXION, NEW HOLLAND, CLASS, MEGA, VEKTOR, NEW HOLLAND, АКРОС, ТОРУМ, ТУКАНО'
       }
     }
   }
