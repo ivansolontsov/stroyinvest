@@ -1,0 +1,90 @@
+.about__subtitle {
+    color: #fff;
+    opacity: 1;
+  }
+  .about__contact-list {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style: none
+  }
+  .about__contact-list-item {
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFf;
+    span {
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+  .about__photo {
+    background-image: url('../../assets/images/ceo.jpg');
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 456px;
+    height: 606px;
+    border-radius: 475px;
+    border: 84px solid white;
+    z-index: -1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .about__photo-title {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    font-weight: bold;
+    padding-bottom: 100px;;
+    span {
+      width: 100%;
+      display: flex;
+    }
+  }
+  
+
+  @media screen and (max-width: 1200px) {
+    .about__photo {
+      width: 314px;
+      height: 314px;
+      background-size: cover;
+      border: 41px solid #fff;
+      right: 25px;
+      top: 100px;
+    }
+  }
+
+
+@media screen and (max-width:991px) {
+    .about__photo {
+      position: initial;
+      padding: 0px;
+      border: 0px;
+      box-shadow: 0 0 0px 20px rgba(0, 0, 0, 0.0509803922);
+      margin-top: 45px;
+      z-index: 1;
+    }
+  }
+
+@media screen and (max-width: 752px) {
+    .page__wrapper_extended {
+        padding-bottom: 40px !important;
+    }
+    .content__bg {
+      background: linear-gradient(180deg, #0041e700, #0041e7 36%);
+    }
+}
+
+@media screen and (max-width: 345px) {
+    .about__photo {
+        width: 290px;
+        height: 290px;
+        margin: auto;
+        margin-top: 45px;
+    }
+}

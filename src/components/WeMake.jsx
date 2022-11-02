@@ -33,8 +33,8 @@ const WeMake = () => {
   return (
     <div className="wemake content">
         <div className={`site__modal ${openModal ? 'show' : ''}`}>
-            <ContactUs isModal={true} someInfo={info}>
-            <div className="request__cross"><button onClick={() => setOpenModal(false)} className="request__cross-button"><img src={crossIcon} alt="Закрыть Окно" /></button></div>
+            <ContactUs isModal={true} someInfo={info} isOrder={true}>
+                <div className="request__cross"><button onClick={() => setOpenModal(false)} className="request__cross-button"><img src={crossIcon} alt="Закрыть Окно" /></button></div>
             </ContactUs>
         </div>
         <div className="wemake__wrapper">

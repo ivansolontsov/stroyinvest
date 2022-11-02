@@ -13,8 +13,8 @@ const Footer = () => {
   ]
 
   let companyContacts = [
-    {title: "Адрес", text: "Россия, Саратов, ул. Азина 81а", link: "/"},
-    {title: "Телефон", text: "+7(917)-308-09-37, Шитяков Сергей Владимирович", link: "/"}
+    {title: "Адрес", text: "Россия, Саратов, ул. Азина 81а", link: "https://yandex.com.ge/maps/194/saratov/house/ulitsa_imeni_v_m_azina_81a/YEwYfwZiSU0BQFtrfXh0dHVlYw==/?ll=45.912085%2C51.455967&z=17"},
+    {title: "Телефон", text: "+7(927)223-84-40, Шитяков Сергей Владимирович", link: "tel:+79272238440"}
   ]
 
 
@@ -24,11 +24,11 @@ const Footer = () => {
   ]
 
   let contacts = [
-    {icon: telegramIcon, text: "Написать в Telegram", link: "/"},
-    {icon: whatsappIcon, text: "Написать в WhatsApp", link: "/"},
-    {icon: telegramIcon, text: "Написать в Viber", link: "/"},
-    {icon: instagramIcon, text: "Написать в Instagram", link: "/"},
-    {icon: telegramIcon, text: "Написать на Почту", link: "/"},
+    {icon: telegramIcon, text: "Написать в Telegram", link: "https://t.me/stroyinvest"},
+    {icon: whatsappIcon, text: "Написать в WhatsApp", link: "https://api.whatsapp.com/send?phone=79272238440"},
+    {icon: telegramIcon, text: "Написать в Viber", link: "viber://chat?number=%2B79272238440"},
+    {icon: instagramIcon, text: "Написать в Instagram", link: "https://www.instagram.com/stroiinvest_c_64/"},
+    {icon: telegramIcon, text: "Написать на Почту", link: "mailto:stroinvest-s@yandex.ru"},
   ]
 
 
@@ -62,7 +62,7 @@ const Footer = () => {
                   companyContacts.map((item, index) => (
                     <div key={index}>
                       <h3>{item.title}</h3>
-                      <a href={item.href} target="_blank" rel="noreferrer">{item.text}</a>
+                      <a href={item.link} target="_blank" rel="noreferrer">{item.text}</a>
                     </div>
                   ))
                 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
 import Slider from './Slider';
 import useWindowDimensions from './WindowSize';
 

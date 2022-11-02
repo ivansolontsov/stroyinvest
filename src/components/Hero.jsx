@@ -11,10 +11,10 @@ const Hero = () => {
   const [openModal, setOpenModal] = React.useState(false);
    
   let heroSocials = [
-    {title: 'Avito', icon: avitoIcon, link: ''},
-    {title: 'Instagram', icon: instagramIcon, link: ''},
-    {title: 'WhatsApp', icon: whatsappIcon, link: ''},
-    {title: 'Telegram', icon: telegramIcon, link: ''},
+    {title: 'Avito', icon: avitoIcon, link: '/'},
+    {title: 'Instagram', icon: instagramIcon, link: 'https://www.instagram.com/stroiinvest_c_64/'},
+    {title: 'WhatsApp', icon: whatsappIcon, link: 'https://api.whatsapp.com/send?phone=79272238440'},
+    {title: 'Telegram', icon: telegramIcon, link: 'https://t.me/stroyinvest'},
   ]
 
   return (
@@ -31,10 +31,12 @@ const Hero = () => {
             {     
             heroSocials.map((element, index) => {       
                 return(
-                <li key={index} className="hero__socials-item">
-                <img src={element.icon} alt={element.title}/>
-                {element.title}
-                </li>
+                  <a href={element.link} key={index} target="_blank" rel="noreferrer">
+                    <li className="hero__socials-item">
+                    <img src={element.icon} alt={element.title}/>
+                      {element.title}
+                    </li>
+                  </a>
                 )               
             })
             }

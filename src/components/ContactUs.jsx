@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import Parser from 'html-react-parser';
 import successIcon from '../assets/images/icons/success.svg'
 
-export const ContactUs = ({isModal, children, someInfo}) => {
+export const ContactUs = ({isModal, children, someInfo, isOrder}) => {
   const form = useRef();
   const [formStatus, setFormStatus] = React.useState(false);
   const [blockError, setBlockError] = React.useState(false);
@@ -44,7 +44,10 @@ export const ContactUs = ({isModal, children, someInfo}) => {
             ? children
             : ''}
             <h2 className="request__title">
-                {title}
+            {isOrder
+            ? "Оставить Заказ"
+            : `${title}`
+            }
             </h2>
             <p className="request__subtitle">
                 {Parser(subtitle)}
