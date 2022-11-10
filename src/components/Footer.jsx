@@ -84,7 +84,7 @@ const Footer = () => {
               {
                 contacts.map((item, index) => (
                     <li key={index}>
-                      <a href={item.link}>
+                      <a href={item.link} target="_blank" rel="noreferrer">
                         {item.icon
                         ? <img src={item.icon} alt={item.text}/>
                         : ''}

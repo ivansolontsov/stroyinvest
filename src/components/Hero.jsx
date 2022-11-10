@@ -31,12 +31,12 @@ const Hero = () => {
             {     
             heroSocials.map((element, index) => {       
                 return(
-                  <a href={element.link} key={index} target="_blank" rel="noreferrer">
-                    <li className="hero__socials-item">
-                    <img src={element.icon} alt={element.title}/>
-                      {element.title}
+                    <li className="hero__socials-item" key={index}>
+                      <a href={element.link} target="_blank" rel="noreferrer">
+                        <img src={element.icon} alt={element.title}/>
+                        {element.title}
+                      </a>
                     </li>
-                  </a>
                 )               
             })
             }

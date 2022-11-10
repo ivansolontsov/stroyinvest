@@ -17,6 +17,8 @@ const Slider = ({slides, space, sliderStyle, sliderId, sliderType, setWidth}) =>
         modules={[Navigation]}
         spaceBetween={space}
         slidesPerView={'auto'}
+        preloadImages={false}
+        loop={true}
         navigation={{
             prevEl: navLeft,
             nextEl: navRight,
@@ -41,9 +43,9 @@ const Slider = ({slides, space, sliderStyle, sliderId, sliderType, setWidth}) =>
                                 )
                         } else if(sliderType === "gallery") {
                             return (
-                                <SwiperSlide key={index} className='gallery__slide' style={{ backgroundImage: 'url(' + slides.image + ')', backgroundSize: 'cover', backgroundPosition: 'center center' }}>
-                                    <div className='gallery__slide-bg'></div>
-                                    <h3 className="gallery__slide-title">{slides.title}</h3>
+                                <SwiperSlide key={index} className='gallery__slide'>
+                                    <img src={slides.image} className='gallery__slide-bg' loading="lazy" alt={slides.title} />
+                                    {/* <h3 className="gallery__slide-title">{slides.title}</h3> */}
                                 </SwiperSlide>
                             )
                           }

@@ -10,7 +10,6 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "html-react-parser": "^3.0.4",
     "react": "^18.2.0",
-    "react-apple-emojis": "^2.2.1",
     "react-document-meta": "^3.0.0-beta.2",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
@@ -22,10 +21,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-snap": "^0.2.0"
   }
 }

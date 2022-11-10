@@ -28,12 +28,12 @@ const Header = () => {
           <div className="header__logo">
             <NavLink to="/">СТРОЙИНВЕСТ-С</NavLink>
           </div> 
-          <div className="header__logo-info-box">
-            ул. Азина, 81, Саратов  
-          </div> 
           {/* <div className="header__logo-info-box">
-            +7-917-308-09-37
-          </div> */}
+            ул. Азина, 81, Саратов  
+          </div>  */}
+          <div className="header__logo-info-box">
+            +7 (927) 223-84-40, Сергей
+          </div>
         </div>
         <nav className="header__nav invisible-mobile">
           <NavLink to="/" className="header__nav-item">Главная</NavLink>

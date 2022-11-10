@@ -47,7 +47,7 @@ const WeMake = () => {
                         return (
                             <li key={index}>
                                 <div className='wemake__showcase-image'>
-                                    <img src={item.icon} alt={item.title}  />
+                                    <img src={item.icon} alt={item.title} loading="lazy" />
                                 </div>
                                 <h3>{item.title}</h3>
                                 <p>{item.text}</p>

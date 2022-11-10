@@ -1,18 +1,118 @@
 @font-face {
     font-family: 'Dela Gothic One';
-    src: local('Inter Bold'), url(./assets/fonts/dela.ttf) format('truetype');
+    // src: local('Dela'), url(./assets/fonts/dela.woff2) format('woff2');
+    src: local('Dela'), url(./assets/fonts/RobotoCondensed-Bold.ttf) format('truetype');
+    font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto Condensed';
   src: local('Roboto Condensed'), url(./assets/fonts/RobotoCondensed-Bold.ttf) format('truetype');
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto Condensed';
   src: local('Roboto Condensed'), url(./assets/fonts/RobotoCondensed-Regular.ttf) format('truetype');
   font-weight: normal;
+  font-display: swap;
+}
+
+.site__preloader {
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  left: 0px;
+  top: 0px;
+  transition: background-color .3s;
+  background-color: #3E6FEC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+.lds-default {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-default div {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  animation: lds-default 1.2s linear infinite;
+}
+.lds-default div:nth-child(1) {
+  animation-delay: 0s;
+  top: 37px;
+  left: 66px;
+}
+.lds-default div:nth-child(2) {
+  animation-delay: -0.1s;
+  top: 22px;
+  left: 62px;
+}
+.lds-default div:nth-child(3) {
+  animation-delay: -0.2s;
+  top: 11px;
+  left: 52px;
+}
+.lds-default div:nth-child(4) {
+  animation-delay: -0.3s;
+  top: 7px;
+  left: 37px;
+}
+.lds-default div:nth-child(5) {
+  animation-delay: -0.4s;
+  top: 11px;
+  left: 22px;
+}
+.lds-default div:nth-child(6) {
+  animation-delay: -0.5s;
+  top: 22px;
+  left: 11px;
+}
+.lds-default div:nth-child(7) {
+  animation-delay: -0.6s;
+  top: 37px;
+  left: 7px;
+}
+.lds-default div:nth-child(8) {
+  animation-delay: -0.7s;
+  top: 52px;
+  left: 11px;
+}
+.lds-default div:nth-child(9) {
+  animation-delay: -0.8s;
+  top: 62px;
+  left: 22px;
+}
+.lds-default div:nth-child(10) {
+  animation-delay: -0.9s;
+  top: 66px;
+  left: 37px;
+}
+.lds-default div:nth-child(11) {
+  animation-delay: -1s;
+  top: 62px;
+  left: 52px;
+}
+.lds-default div:nth-child(12) {
+  animation-delay: -1.1s;
+  top: 52px;
+  left: 62px;
+}
+@keyframes lds-default {
+  0%, 20%, 80%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
 }
 
 body {
@@ -20,15 +120,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Roboto Condensed", sans-serif;
-  background: url(./assets/images/header__bg-overlay.svg), url(./assets/images/header__bg.svg);
+  background-image: url("./assets/images/header__bg-overlay.svg"), url("./assets/images/header__bg.svg");
   background-position: top center;
   background-repeat: no-repeat;
   background-size: 1440px;
-  min-height: 100vh;
-}
-
-#root {
-  min-height: 100vh;
 }
 
 h1 { 
@@ -65,7 +160,8 @@ button {
   bottom: -302px;
   width: 1200px;
   height: 507px;
-  background: url(./assets/images/3dcombine.png);
+  background: url(./assets/images/3dcombine.webp);
+  user-select: none;
 }
 
 .home {
@@ -158,6 +254,14 @@ button {
     flex-direction: row;
     padding: 6px 10px;
     margin: 0px;
+  }
+  .hero__socials-item a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #fff;
   }
   .hero__socials-item img {
     width: 15px;
@@ -311,7 +415,7 @@ button {
 }
 
 .delivery__bg-box {
-  background: url(./assets/images/delivery.png);
+  background: url(./assets/images/delivery.webp);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -430,11 +534,11 @@ button {
 }
 
 .gallery__slide-bg {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.29) 72.4%, rgba(0, 0, 0, 0.76) 100%);
   position: absolute;
   left: 0px;
   top: 0px;
   width: 100%;
+  object-fit: cover;
   height: 100%;
 }
 
@@ -481,7 +585,7 @@ button {
   top: 0px;
   width: 100%;
   height: 100%;
-  background: url(./assets/images/avito-bg-blur.png);
+  background: url(./assets/images/avito-bg-blur.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -530,7 +634,7 @@ button {
 }
 
 .whyus__features-image-bg {
-  background: url(./assets/images/boy-features-light.png);
+  background: url(./assets/images/boy-features-light.webp);
   position: absolute;
   width: 289px;
   height: 331px;
@@ -543,7 +647,7 @@ button {
 }
 
 .whyus__features-image-human {
-  background: url(./assets/images/boy-features.png);
+  background: url(./assets/images/boy-features.webp);
   position: absolute;
   width: 557px;
   height: 557px;
@@ -680,7 +784,6 @@ button {
   .wemake__button-wrapper {
     display: flex;
     overflow: hidden;
-    height: 0px;
     transition: height .3s;
     .wemake__button {
       display: flex;
@@ -708,21 +811,11 @@ button {
   }
 }
 
-.wemake__showcase li:hover {
-  cursor: pointer;
-  .wemake__showcase-image {
-    height: 0px;
-  }
-  .wemake__button-wrapper {
-    height: 40px;
-  }
-}
-
 .howtoorder {
   margin-top: 45px;
   position: relative;
   .howtoorder__bg {
-    background: url(./assets/images/phone.png);
+    background: url(./assets/images/phone.webp);
     background-position: right bottom -32px;
     background-repeat: no-repeat;
     background-size: 429px 531px;
@@ -943,7 +1036,7 @@ button {
   display: flex;
   min-height: 431px;
   padding-bottom: 45px;
-  background: url(./assets/images/map.jpg);
+  background: url(./assets/images/map.webp);
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -1968,9 +2061,4 @@ button {
   .contacts__list-item-body-wrapper {
     gap: 10px;
   }
-}
-
-::selection {
-  background: rgb(6 6 6 / 54%);
-  border: 1px solid black;
 }
