@@ -47,7 +47,10 @@ const Hero = () => {
           Мы занимаемся производством запчастей для <strong>сельскохозяйственной техники</strong>, <strong>лазерной резкой</strong> по Вашим эскизам. Оставьте заявку для уточнения 
           интересующей информации.
         </p>
-        <button onClick={() => setOpenModal(true)} className="hero__button"><span>📞</span> Оставить заявку</button>
+        <div className="hero__button-wrapper">
+          <button onClick={() => setOpenModal(true)} className="hero__button"><span>📫</span> Оставить заявку</button>
+          <a href="tel:+79272238440" rel="noreferrer" target="_blank" className="hero__call-button"><span>📞</span> Позвонить</a>
+        </div>
       </div>
     </div>
   )

@@ -2,6 +2,8 @@ import React from 'react'
 import instagramIcon from '../assets/images/icons/instagram.svg'
 import whatsappIcon from '../assets/images/icons/whatsapp.svg'
 import telegramIcon from '../assets/images/icons/telegram.svg'
+import emailIcon from '../assets/images/icons/eMailicon.svg'
+import viberIcon from '../assets/images/icons/viberIcon.svg'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -19,16 +21,16 @@ const Footer = () => {
 
 
   let workingHours = [
-    {text: "Пн-Пт, 8:00 - 18:00"},
-    {text: "Сб, Вс - выходной"}
+    {text: "Пн-Пт: 8:00 - 18:00"},
+    {text: "Сб-Вс: Выходные дни"}
   ]
 
   let contacts = [
     {icon: telegramIcon, text: "Написать в Telegram", link: "https://t.me/stroyinvests77"},
     {icon: whatsappIcon, text: "Написать в WhatsApp", link: "https://api.whatsapp.com/send?phone=79272238440"},
-    {icon: "", text: "Написать в Viber", link: "viber://chat?number=%2B79272238440"},
+    {icon: viberIcon, text: "Написать в Viber", link: "viber://chat?number=%2B79272238440"},
     {icon: instagramIcon, text: "Написать в Instagram", link: "https://www.instagram.com/stroiinvest_c_64/"},
-    {icon: "", text: "Написать на Почту", link: "mailto:stroinvest-s@yandex.ru"},
+    {icon: emailIcon, text: "Написать на Почту", link: "mailto:stroinvest-s@yandex.ru"},
   ]
 
 

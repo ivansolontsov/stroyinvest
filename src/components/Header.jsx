@@ -3,6 +3,7 @@ import burgerIcon from '../assets/images/icons/burger.svg'
 import crossIcon from '../assets/images/icons/cross.svg'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { NavLink } from 'react-router-dom';
+import { Portal } from 'react-portal';
 
 const Header = () => {
 
@@ -12,7 +13,7 @@ const Header = () => {
   turnOffScroll ? disableBodyScroll(document) : enableBodyScroll(document)
 
   const dropdownOpen = (state) => {
-    if(state) {
+    if (state) {
       setMobileMenu(true);
       setTurnOffScroll(true);
     } else {
@@ -26,11 +27,11 @@ const Header = () => {
       <div className="header__content-wrapper">
         <div className="header__left-side">
           <div className="header__logo">
-            <NavLink to="/">СТРОЙИНВЕСТ-С</NavLink>
-          </div> 
-          {/* <div className="header__logo-info-box">
+            <NavLink to="/">ООО «СТРОЙИНВЕСТ-С»</NavLink>
+          </div>
+          <div className="header__logo-info-box">
             ул. Азина, 81, Саратов  
-          </div>  */}
+          </div> 
           <div className="header__logo-info-box">
             +7 (927) 223-84-40, Сергей
           </div>
@@ -42,21 +43,26 @@ const Header = () => {
           <NavLink to="/aboutus" className="header__nav-item">О нас</NavLink>
         </nav>
         <nav className="header__mobile-nav visible-mobile">
-          <button className="header__mobile-nav-button" 
-            onClick={() => {dropdownOpen(true)}}>
+          <button className="header__mobile-nav-button"
+            onClick={() => { dropdownOpen(true) }}>
             <img src={burgerIcon} alt="Навигация" />
           </button>
         </nav>
       </div>
-      <div className={`header__mobile-nav-wrapper ${mobileMenu ? 'mobile__menu-visible' : 'mobile__menu-invisible'}`}>
-            <button className="header__mobile-nav-wrapper-cross" 
-              onClick={() => {dropdownOpen(false)}}>
+      {mobileMenu
+        ? <Portal>
+          <div className={`header__mobile-nav-wrapper ${mobileMenu ? 'mobile__menu-visible' : 'mobile__menu-invisible'}`}>
+            <button className="header__mobile-nav-wrapper-cross"
+              onClick={() => { dropdownOpen(false) }}>
               <img src={crossIcon} alt="Закрыть Меню" /></button>
-            <NavLink to="/" className="header__nav-item" onClick={()=>{dropdownOpen(false)}}>Главная</NavLink>
-            <NavLink to="/catalog" className="header__nav-item" onClick={()=>{dropdownOpen(false)}}>Каталог</NavLink>
-            <NavLink to="/contacts" className="header__nav-item" onClick={()=>{dropdownOpen(false)}}>Контакты</NavLink>
-            <NavLink to="/aboutus" className="header__nav-item" onClick={()=>{dropdownOpen(false)}}>О нас</NavLink>
-      </div>
+            <NavLink to="/" className="header__nav-item" onClick={() => { dropdownOpen(false) }}>Главная</NavLink>
+            <NavLink to="/catalog" className="header__nav-item" onClick={() => { dropdownOpen(false) }}>Каталог</NavLink>
+            <NavLink to="/contacts" className="header__nav-item" onClick={() => { dropdownOpen(false) }}>Контакты</NavLink>
+            <NavLink to="/aboutus" className="header__nav-item" onClick={() => { dropdownOpen(false) }}>О нас</NavLink>
+          </div>
+        </Portal>
+        : ""
+      }
     </header>
   )
 }
