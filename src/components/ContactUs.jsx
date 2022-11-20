@@ -6,7 +6,7 @@ import successIcon from '../assets/images/icons/success.svg'
 export const ContactUs = ({ isModal, children, someInfo, isOrder }) => {
     let mainTitle;
     if (!isOrder) {
-        mainTitle = 'Связаться с нами'
+        mainTitle = 'Узнать Стоиомость'
     } else {
         mainTitle = 'Оставить Заказ'
     }

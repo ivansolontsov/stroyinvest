@@ -15,9 +15,9 @@ import DocumentMeta from 'react-document-meta'
 const Home = () => {  
 
   const meta = {
-    title: 'Купить Ножи Противорежущие с доставкой! от ООО "СТРОЙИНВЕСТ-С"',
+    title: 'Купить Противорез, Нож Противорежущий Измельчителя с доставкой по России',
     description: 'Мы изготавливаем противорежущие ножи и другие запчасти для сельскохозяйственной техники и комбайнов LEXION, NEW HOLLAND, CLASS, MEGA, VEKTOR, NEW HOLLAND, АКРОС, ТОРУМ, ТУКАНО.',
-    canonical: 'http://example.com/path/to/page',
+    canonical: 'https://stroyinvests.ru/',
     meta: {
       charset: 'utf-8',
       name: {

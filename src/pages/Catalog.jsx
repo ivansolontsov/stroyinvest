@@ -15,17 +15,26 @@ const Catalog = () => {
   let categories = [
     {
       id: 0,
+      categoryTitle: "Ножи Противорежущие",
       title: "Ножи для сельхозтехники",
+      description: 'Наш каталог ножей измельчителей или противорежущих ножей для сельскохозяйственной техники АКРОС, ВЕКТОР, ТУКАН, ДОН и другие виды комбайнов.',
     },
     {
       id: 1,
+      categoryTitle: "Запчасти для сельхоз. техники",
+      categoryCaption: "",
       title: "Запчасти для сельхозтехники",
+      description: '',
     },
     {
       id: 2,
+      categoryTitle: "Тара",
+      categoryCaption: "",
       title: "Тара",
+      description: '',
     },
   ]
+
   let catalog = [
     { id: 1, image: nozhik, title: 'Нож измельчителя', l: '190', b: '50', s: '4', d: '10', price: 299, category: 0, },
     { id: 2, image: nozhik, title: 'Нож измельчителя', l: '175', b: '40', s: '4', d: '11', price: 299, category: 0, },
@@ -57,9 +66,9 @@ const Catalog = () => {
   ]
 
   const meta = {
-    title: 'Каталог Противорежущий Ножей для Комбайнов | ООО "СТРОЙИНВЕСТ-С"',
+    title: 'Купить Противорез, Нож Противорежущий Измельчителя для Комбайнов АКРОС, ДОН, КИР, ТОРУМ',
     description: 'В нашем каталоге представлено 14 видов противорезов для комбайнов LEXION, NEW HOLLAND, CLASS, MEGA, VEKTOR, NEW HOLLAND, АКРОС, ТОРУМ, ТУКАНО.',
-    canonical: 'http://example.com/path/to/page',
+    canonical: 'https://stroyinvests.ru/catalog',
     meta: {
       charset: 'utf-8',
       name: {
@@ -67,6 +76,16 @@ const Catalog = () => {
       }
     }
   }
+
+  const handleOpen = (event) => {
+    if(!event.target.closest('.catalog').querySelector('.catalog__list').classList.contains('catalog__list_open')) {
+      event.target.innerText = 'ЗАКРЫТЬ';
+      event.target.closest('.catalog').querySelector('.catalog__list').classList.add('catalog__list_open');
+    } else {
+      event.target.innerText = 'ОТКРЫТЬ';
+      event.target.closest('.catalog').querySelector('.catalog__list').classList.remove('catalog__list_open');
+    }
+  };
 
   return (
     <DocumentMeta {...meta}>
@@ -84,69 +103,87 @@ const Catalog = () => {
             У нас <strong>14</strong> вариантов ножей измельчителей для комбайнов <strong>LEXION, NEW HOLLAND, CLASS, MEGA, VEKTOR, NEW HOLLAND, АКРОС, ТОРУМ, ТУКАНО</strong> и <strong>27</strong> видов ящиков для упаковки аккумуляторов и любые ящики по вашим размерам и чертежам
           </p>
         </section>
-        <section className="catalog">
-          <h2 className="catalog__title">Ножи Противорежущие</h2>
-          <p className="catalog__subtitle">НУЖНО ПРИДУМАТЬ ОПИСАНИЕ</p>
-          <div className="catalog__list">
-            {
-              catalog.map((catalogItem, index) => {
-                if (catalogItem.l && catalogItem.b && catalogItem.s && catalogItem.d) {
-                  return (
-                    <div className="catalog__list-item" key={index}>
-                      <img src={catalogItem.image} alt={catalogItem.title} className="catalog__list-item-img" />
-                      <div className="catalog__list-item-body">
-                        <span className="catalog__list-item-category">
-                          {categories[catalogItem.category].title}
-                        </span>
-                        <h3 className="catalog__list-item-name">{catalogItem.title}</h3>
-                        <div className="catalog__list-item-specs">
-                          <div className="catalog__list-item-specs-item">
-                            <span>Длина (L):</span> {catalogItem.l}мм
-                          </div>
-                          <div className="catalog__list-item-specs-item">
-                            <span>Ширина (B):</span> {catalogItem.b}мм
-                          </div>
-                          <div className="catalog__list-item-specs-item">
-                            <span>Толщина (s):</span> {catalogItem.s}мм
-                          </div>
-                          <div className="catalog__list-item-specs-item">
-                            <span>Диаметр отверстия (d):</span> {catalogItem.d}мм
-                          </div>
-                        </div>
-                        <button onClick={
-                          () => {
-                            setOpenModal(true);
-                            setInfo(`${catalogItem.title} + Длина (L): ${catalogItem.l}мм + Ширина (B): ${catalogItem.b}мм + олщина (s): ${catalogItem.s}мм + Диаметр отверстия (d): ${catalogItem.d}мм, стоимость на сайте была ${catalogItem.price}`)
-                          }
+        {
+          categories.map((category, index) => {
+            return (
+              <section className="catalog" key={index}>
+                <div className="catalog__header">
+                  <div className="catalog__header-title">
+                    <h2 className="catalog__title">{category.categoryTitle}</h2>
+                    <p className="catalog__subtitle">
+                      {category.description}
+                    </p>
+                  </div>
+                  <button className="catalog__header-button" onClick={(event) => { handleOpen(event) }}>
+                    ОТКРЫТЬ
+                  </button>
+                </div>
+                <div key={index} className={`catalog__list`}>
+                  {
+                    catalog.map((catalogItem, index) => {
+                      if (catalogItem.category === category.id) {
+                        if (catalogItem.l && catalogItem.b && catalogItem.s && catalogItem.d) {
+                          return (
+                            <div className="catalog__list-item" key={index}>
+                              <img src={catalogItem.image} alt={catalogItem.title} className="catalog__list-item-img" />
+                              <div className="catalog__list-item-body">
+                                <span className="catalog__list-item-category">
+                                  {categories[catalogItem.category].title}
+                                </span>
+                                <h3 className="catalog__list-item-name">{catalogItem.title}</h3>
+                                <div className="catalog__list-item-specs">
+                                  <div className="catalog__list-item-specs-item">
+                                    <span>Длина (L):</span> {catalogItem.l}мм
+                                  </div>
+                                  <div className="catalog__list-item-specs-item">
+                                    <span>Ширина (B):</span> {catalogItem.b}мм
+                                  </div>
+                                  <div className="catalog__list-item-specs-item">
+                                    <span>Толщина (s):</span> {catalogItem.s}мм
+                                  </div>
+                                  <div className="catalog__list-item-specs-item">
+                                    <span>Диаметр отверстия (d):</span> {catalogItem.d}мм
+                                  </div>
+                                </div>
+                                <button onClick={
+                                  () => {
+                                    setOpenModal(true);
+                                    setInfo(`${catalogItem.title} + Длина (L): ${catalogItem.l}мм + Ширина (B): ${catalogItem.b}мм + олщина (s): ${catalogItem.s}мм + Диаметр отверстия (d): ${catalogItem.d}мм, стоимость на сайте была ${catalogItem.price}`)
+                                  }
+                                }
+                                  className="catalog__order-button">Заказать от <strong>{catalogItem.price}₽</strong></button>
+                              </div>
+                            </div>
+                          )
+                        } else {
+                          return (
+                            <div className="catalog__list-item" key={index}>
+                              <img src={catalogItem.image} alt={catalogItem.title} className="catalog__list-item-img" />
+                              <div className="catalog__list-item-body">
+                                <span className="catalog__list-item-category">
+                                  {categories[catalogItem.category].title}
+                                </span>
+                                <h3 className="catalog__list-item-name">{catalogItem.title}</h3>
+                                <button onClick={
+                                  () => {
+                                    setOpenModal(true);
+                                    setInfo(`${catalogItem.title}, стоимость, которая отображалась на сайте ${catalogItem.price}`)
+                                  }
+                                }
+                                  className="catalog__order-button">Заказать от <strong>{catalogItem.price}₽</strong></button>
+                              </div>
+                            </div>
+                          )
                         }
-                          className="catalog__order-button">Заказать от <strong>{catalogItem.price}₽</strong></button>
-                      </div>
-                    </div>
-                  )
-                } else {
-                  return (
-                    <div className="catalog__list-item" key={index}>
-                      <img src={catalogItem.image} alt={catalogItem.title} className="catalog__list-item-img" />
-                      <div className="catalog__list-item-body">
-                        <span className="catalog__list-item-category">
-                          {categories[catalogItem.category].title}
-                        </span>
-                        <h3 className="catalog__list-item-name">{catalogItem.title}</h3>
-                        <button onClick={
-                          () => {
-                            setOpenModal(true);
-                            setInfo(`${catalogItem.title}, стоимость, которая отображалась на сайте ${catalogItem.price}`)
-                          }
-                        }
-                          className="catalog__order-button">Заказать от <strong>{catalogItem.price}₽</strong></button>
-                      </div>
-                    </div>
-                  )
-                }
-              })
-            }
-          </div>
-        </section>
+                      }
+                      return null;
+                    })
+                  }
+                </div>
+              </section>
+            )
+          })
+        }
       </div>
     </DocumentMeta>
   )

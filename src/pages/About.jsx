@@ -15,8 +15,8 @@ const About = () => {
  
   const meta = {
     title: 'О Нас | ООО "СТРОЙИНВЕСТ-С"',
-    description: 'I am a description, and I can create multiple tags',
-    canonical: 'http://example.com/path/to/page',
+    description: 'Информация о компании ООО "СТРОЙИНВЕСТ-С", здесь вы найдете интересующие Вас данные и историю компании.',
+    canonical: 'https://stroyinvests.ru/about',
     meta: {
       charset: 'utf-8',
       name: {

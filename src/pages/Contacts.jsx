@@ -16,8 +16,8 @@ const Contacts = () => {
   
   const meta = {
     title: 'Контакты | ООО "СТРОЙИНВЕСТ-С"',
-    description: 'I am a description, and I can create multiple tags',
-    canonical: 'http://example.com/path/to/page',
+    description: 'Контакты компании ООО "СТРОЙИНВЕСТ-С", здесь вы найдете наш телефон, электронный адрес и фактический адрес местонахождения.',
+    canonical: 'https://stroyinvests.ru/contacts',
     meta: {
       charset: 'utf-8',
       name: {
