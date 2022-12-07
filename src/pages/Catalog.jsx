@@ -1,17 +1,9 @@
 import React from 'react'
+import { CatalogItem } from '../components/catalog/CatalogItem'
 import nozhik from '../assets/images/catalog/nozhi.png'
 import noPhoto from '../assets/images/catalog/noPhoto.webp'
-import { ContactUs } from '../components/ContactUs'
-import crossIcon from '../assets/images/icons/cross.svg'
 import DocumentMeta from 'react-document-meta'
-import { Portal } from 'react-portal'
-
-
 const Catalog = () => {
-
-  const [openModal, setOpenModal] = React.useState(false);
-  const [info, setInfo] = React.useState('');
-
   let categories = [
     {
       id: 0,
@@ -77,26 +69,9 @@ const Catalog = () => {
     }
   }
 
-  const handleOpen = (event) => {
-    if(!event.target.closest('.catalog').querySelector('.catalog__list').classList.contains('catalog__list_open')) {
-      event.target.innerText = 'ЗАКРЫТЬ';
-      event.target.closest('.catalog').querySelector('.catalog__list').classList.add('catalog__list_open');
-    } else {
-      event.target.innerText = 'ОТКРЫТЬ';
-      event.target.closest('.catalog').querySelector('.catalog__list').classList.remove('catalog__list_open');
-    }
-  };
-
   return (
     <DocumentMeta {...meta}>
       <div className='content'>
-        <Portal>
-          <div className={`site__modal ${openModal ? 'show' : ''}`}>
-            <ContactUs isModal={true} someInfo={info} isOrder={true}>
-              <div className="request__cross"><button onClick={() => setOpenModal(false)} className="request__cross-button"><img src={crossIcon} alt="Закрыть Окно" /></button></div>
-            </ContactUs>
-          </div>
-        </Portal>
         <section className="page__wrapper">
           <h1 className="page__title">Каталог</h1>
           <p className="page__subtitle">
@@ -106,81 +81,7 @@ const Catalog = () => {
         {
           categories.map((category, index) => {
             return (
-              <section className="catalog" key={index}>
-                <div className="catalog__header">
-                  <div className="catalog__header-title">
-                    <h2 className="catalog__title">{category.categoryTitle}</h2>
-                    <p className="catalog__subtitle">
-                      {category.description}
-                    </p>
-                  </div>
-                  <button className="catalog__header-button" onClick={(event) => { handleOpen(event) }}>
-                    ОТКРЫТЬ
-                  </button>
-                </div>
-                <div key={index} className={`catalog__list`}>
-                  {
-                    catalog.map((catalogItem, index) => {
-                      if (catalogItem.category === category.id) {
-                        if (catalogItem.l && catalogItem.b && catalogItem.s && catalogItem.d) {
-                          return (
-                            <div className="catalog__list-item" key={index}>
-                              <img src={catalogItem.image} alt={catalogItem.title} className="catalog__list-item-img" />
-                              <div className="catalog__list-item-body">
-                                <span className="catalog__list-item-category">
-                                  {categories[catalogItem.category].title}
-                                </span>
-                                <h3 className="catalog__list-item-name">{catalogItem.title}</h3>
-                                <div className="catalog__list-item-specs">
-                                  <div className="catalog__list-item-specs-item">
-                                    <span>Длина (L):</span> {catalogItem.l}мм
-                                  </div>
-                                  <div className="catalog__list-item-specs-item">
-                                    <span>Ширина (B):</span> {catalogItem.b}мм
-                                  </div>
-                                  <div className="catalog__list-item-specs-item">
-                                    <span>Толщина (s):</span> {catalogItem.s}мм
-                                  </div>
-                                  <div className="catalog__list-item-specs-item">
-                                    <span>Диаметр отверстия (d):</span> {catalogItem.d}мм
-                                  </div>
-                                </div>
-                                <button onClick={
-                                  () => {
-                                    setOpenModal(true);
-                                    setInfo(`${catalogItem.title} + Длина (L): ${catalogItem.l}мм + Ширина (B): ${catalogItem.b}мм + олщина (s): ${catalogItem.s}мм + Диаметр отверстия (d): ${catalogItem.d}мм, стоимость на сайте была ${catalogItem.price}`)
-                                  }
-                                }
-                                  className="catalog__order-button">Заказать от <strong>{catalogItem.price}₽</strong></button>
-                              </div>
-                            </div>
-                          )
-                        } else {
-                          return (
-                            <div className="catalog__list-item" key={index}>
-                              <img src={catalogItem.image} alt={catalogItem.title} className="catalog__list-item-img" />
-                              <div className="catalog__list-item-body">
-                                <span className="catalog__list-item-category">
-                                  {categories[catalogItem.category].title}
-                                </span>
-                                <h3 className="catalog__list-item-name">{catalogItem.title}</h3>
-                                <button onClick={
-                                  () => {
-                                    setOpenModal(true);
-                                    setInfo(`${catalogItem.title}, стоимость, которая отображалась на сайте ${catalogItem.price}`)
-                                  }
-                                }
-                                  className="catalog__order-button">Заказать от <strong>{catalogItem.price}₽</strong></button>
-                              </div>
-                            </div>
-                          )
-                        }
-                      }
-                      return null;
-                    })
-                  }
-                </div>
-              </section>
+              <CatalogItem title={category.title} subtitle={category.description} key={index} products={catalog} categoryId={category.id} />
             )
           })
         }
