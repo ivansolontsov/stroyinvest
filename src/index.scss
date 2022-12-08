@@ -904,6 +904,7 @@ button {
 
 .howtoorder {
   margin-top: 45px;
+  margin-bottom: 45px;
   position: relative;
   .howtoorder__bg {
     background: url(./assets/images/phone.webp);
@@ -914,7 +915,7 @@ button {
     right: -120px;
     bottom: -210px;
     width: 100%;
-    height: 100%;
+    height: 127%;
   }
 }
 
@@ -992,6 +993,7 @@ button {
 
 .request {
   margin-top: 45px;
+  margin-bottom: 45px;
   .success {
     background: #8BD000;
     transition: all .3s;
@@ -1444,6 +1446,7 @@ button {
 
 .catalog__list_open {
   max-height: 10000px;
+  overflow: visible;
 }
 .catalog__list-item:first-child {
   margin-top: 25px;
@@ -1471,6 +1474,7 @@ button {
   align-items: flex-start;
   padding: 0px;
   gap: 0px;
+  width: 100%;
 }
 
 .catalog__list-item-category {
@@ -1487,9 +1491,9 @@ button {
 .catalog__list-item-name {
   font-style: normal;
   font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
-  display: flex;
+  font-size: 28px;
+  line-height: 150%;
+  display: flex; 
   color: #252525;
   padding:0px;
   margin: 0px;
@@ -2165,11 +2169,30 @@ button {
     font-size: 14px;
     gap: 4px;
   }
+  .catalog__list {
+    overflow: visible;
+  }
+  .catalog__list-item {
+    border: none;
+    overflow: visible;
+    padding: 0px;
+  }
   .catalog__list-item-body {
-    padding: 20px;
+    margin: 20px 0px;
+    width: auto;
   }
   .hero__title {
     font-size: 28px;
+  }
+  .catalog__order-button {
+    position: initial;
+    margin-top: 30px;
+    align-self: flex-end;
+    width: 100%;
+  }
+  .catalog__list-item-name {
+    font-size: 24px;
+    line-height: 125%;
   }
 }
 

@@ -4,15 +4,6 @@ import DocumentMeta from 'react-document-meta'
 
 const About = () => {  
 
-  // const aboutList = [
-  //   {title: 'Директор', value: 'Шитяков Сергей Владимирович'},
-  //   {title: 'Телефон', value: '79272238440, Шитяков Сергей Владимирович'},
-  //   {title: 'КПП', value: '645101001'},
-  //   {title: 'ОГРН', value: '1116451001138'},
-  //   {title: 'ИНН', value: '6451428953'},
-  //   {title: 'ЮР. АДРЕС', value: 'Россия, г. Саратов, улица имени Азина В.М., дом 81'},
-  // ]
- 
   const meta = {
     title: 'О Нас | ООО "СТРОЙИНВЕСТ-С"',
     description: 'Информация о компании ООО "СТРОЙИНВЕСТ-С", здесь вы найдете интересующие Вас данные и историю компании.',
@@ -53,18 +44,6 @@ const About = () => {
             Надеемся на долговременное и взаимовыгодное сотрудничество! 
             </p>
           </div>
-          {/* <ul className="about__contact-list">
-            {
-              aboutList.map((listItem, index) => {
-                return(
-                  <li className="about__contact-list-item" key={index}>
-                  <span>{listItem.title}: </span>
-                  {listItem.value}
-                  </li>
-                )
-              })
-            }
-          </ul> */}
           <div className="about__photo">
             <div className="about__photo-title">
               <span>Шитяков</span> 

@@ -34,7 +34,7 @@ const Home = () => {
         <Gallery/>
         <Whyus/>
         <WeMake/>
-        <HowToOrder/>
+        <HowToOrder withBg={true}/>
         <ContactUs />
         <Map />
       </section>
