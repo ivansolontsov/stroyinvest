@@ -6,6 +6,7 @@ import crossIcon from '../public/images/icons/cross.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../lib/store/store'
 import { closeModal } from '../lib/store/modal/modalSlice';
+import Image from 'next/image';
 
 type Props = {
     isModal?: boolean,
@@ -71,7 +72,7 @@ export const ContactUs = ({ isModal, someInfo, isOrder }: Props) => {
                                 onClick={() => {
                                     dispatch(closeModal())
                                 }}>
-                                <img src={crossIcon} alt="Закрыть Окно" />
+                                <Image src={crossIcon} width={24} height={24} alt="Закрыть Окно" />
                             </button>
                         </div>
                     )}

@@ -4,16 +4,18 @@ import { openModal } from '../lib/store/modal/modalSlice'
 import Image from 'next/image'
 import { RootState } from '../lib/store/store'
 
+type Props = {
 
+}
 
-const Hero = () => {
+const Hero = ({}: Props) => {
 
   const socials = useSelector((state: RootState) => state.socials)
   const dispatch = useDispatch()
 
   return (
     <div className='content'>
-      <div className="hero__wrapper">
+      <section className="hero__wrapper">
         <div className="bg__image"></div>
         <div className="hero__socials">
           <ul className="hero__socials-list">
@@ -40,7 +42,7 @@ const Hero = () => {
           <button onClick={() => dispatch(openModal())} className="hero__button"><span>⚡️</span> Узнать Стоимость</button>
           <a href="tel:+79272238440" rel="noreferrer" target="_blank" className="hero__call-button"><span>📞</span> Позвонить</a>
         </div>
-      </div>
+      </section>
     </div>
   )
 }
