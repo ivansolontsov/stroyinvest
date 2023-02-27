@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import burgerIcon from '../public/images/icons/burger.svg'
 import crossIcon from '../public/images/icons/cross.svg'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+// import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import { Portal } from 'react-portal';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Header = () => {
 
   const [mobileMenu, setMobileMenu] = React.useState<boolean>(false);
   const [turnOffScroll, setTurnOffScroll] = React.useState<boolean>(false);
 
-  useEffect(() => {
-    turnOffScroll ? disableBodyScroll(document.body) : enableBodyScroll(document.body)
-  }, [turnOffScroll])
+  // turnOffScroll ? disableBodyScroll(document) : enableBodyScroll(document)
 
   const dropdownOpen = (state: boolean) => {
     if (state) {
@@ -48,7 +45,7 @@ const Header = () => {
         <nav className="header__mobile-nav visible-mobile">
           <button className="header__mobile-nav-button"
             onClick={() => { dropdownOpen(true) }}>
-            <Image src={burgerIcon} alt="Навигация" width={40} height={40} />
+            <img src={burgerIcon} alt="Навигация" />
           </button>
         </nav>
       </div>
@@ -57,8 +54,7 @@ const Header = () => {
           <div className={`header__mobile-nav-wrapper ${mobileMenu ? 'mobile__menu-visible' : 'mobile__menu-invisible'}`}>
             <button className="header__mobile-nav-wrapper-cross"
               onClick={() => { dropdownOpen(false) }}>
-              <Image src={crossIcon} alt="Закрыть" width={24} height={24} />
-            </button>
+              <img src={crossIcon} alt="Закрыть Меню" /></button>
             <Link href="/" className="header__nav-item" onClick={() => { dropdownOpen(false) }}>Главная</Link>
             <Link href="/catalog" className="header__nav-item" onClick={() => { dropdownOpen(false) }}>Каталог</Link>
             <Link href="/contacts" className="header__nav-item" onClick={() => { dropdownOpen(false) }}>Контакты</Link>
