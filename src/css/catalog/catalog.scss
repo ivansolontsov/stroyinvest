@@ -1,0 +1,33 @@
+.catalog__list-form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.catlaog__list-combines {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.catlaog__list-combines-item-radio {
+    position: absolute;
+    left: -9999px;
+    display: none;
+}
+.catlaog__list-combines-item {
+    cursor: pointer;
+    border: 1px solid #efefef;
+    border-radius: 6px;
+    padding: 9px;
+    font-size: 18px;
+    transition: all .3s;
+}
+
+.catlaog__list-combines-item_active {
+    border: 1px solid #0040E6;
+    color: #0040E6;
+    box-shadow: 0 0 0 3px #0040e61c;
+}
